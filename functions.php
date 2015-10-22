@@ -13,3 +13,27 @@ include_once('core/recipe.php');
 
 // Relation between that
 include_once('core/relation.php');
+
+$args = array(
+  'post_type' => 'recette',
+  'tax_query' => [
+    'relation' => 'OR',
+    [
+      'taxonomy' => 'color-cat',
+      'field'    => 'slug',
+      'terms'    => 'bleu'
+    ]
+  ]
+);
+$query = new WP_Query( $args );
+
+if ( $query->have_posts() ) {
+  echo '<ul>';
+  while ( $query->have_posts() ) {
+    $query->the_post();
+    echo '<li>' . get_the_title() . '</li>';
+  }
+  echo '</ul>';
+} else {
+  echo "no post";
+}
