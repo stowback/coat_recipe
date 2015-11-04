@@ -1,12 +1,6 @@
-.product-thumb a{
-  display: inline-block;
-}
+
 .product-thumb a:hover{
   text-decoration: underline;
-}
-
-.product-thumb .product-thumb-title{
-  display: block; 
 }
 
 .product-thumb .product-thumb-title:hover{
@@ -19,4 +13,25 @@
 
 .dropdown-items li:hover i {
   background-color: rgba(null, null, null, 1);
+}
+
+.intro-gender .intro-gender-button:hover{
+  background-color: #000;
+  color:#fff;
+  transition: all 0.4s;
+}
+
+.look-content-tags a{
+  text-decoration: none;
+}
+.look-content-tags a:hover{
+  text-decoration: underline;
+}
+
+.look-content-title, .look-content-subtitle, .look-content-actions{
+  text-align:center;
+}
+
+.header-gender-switch a{
+  text-decoration: none;
 }

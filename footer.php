@@ -7,6 +7,9 @@
     $classBody = 'page-intro';
   }
   if ($classBody != 'page-intro'): 
+
+    $cat = get_the_terms( $post->ID, 'gender-cat' );
+    $c = $cat[0]->name;
 ?>
   
 <!-- end main -->
@@ -20,8 +23,8 @@
 
     <nav class="footer-nav">
       <ul>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Archives</a></li>
+        <li><a href="<?= site_url(); ?>/contact">Contact</a></li>
+        <li><a href="<?= site_url(); ?>/gender/<?= $c; ?>">Archives</a></li>
       </ul>
     </nav>
 
@@ -38,6 +41,6 @@
   <script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/js/librairies/jquery.js"></script>
   <script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/js/librairies/js.cookie.js"></script>
   <script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/js/scripts/app.js"></script>
-
+ <?php wp_footer(); ?> 
 
 </html>

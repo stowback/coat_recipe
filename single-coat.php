@@ -46,7 +46,7 @@
                     <div class="look-thumb col-md-4">
                       <div class="look-thumb-picture">
                         <a href="<?= get_permalink($recipe) ?>" class="look-thumb-button">Voir</a>
-                        <?= get_the_post_thumbnail($recipe->ID, 'post_size'); ?>
+                        <?= get_the_post_thumbnail($recipe->ID, 'coat_recipe'); ?>
                       </div>
                       <div class="look-thumb-infos">
                         <a href="<?= get_permalink($recipe) ?>" class="look-thumb-subtitle">Recette #<?= $recipe->ID; ?></a>

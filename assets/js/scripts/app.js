@@ -185,6 +185,42 @@ $('.dropdown-items li').hover( function (e) {
 	*/
 
 
+	/**
+	*
+	*	TWITTER|JS
+	*	--------------------
+	*	DESC |TWITTER
+	*
+	*/
+
+$('#getJSON').click( function () {
+    $('#data-tab').fadeOut();
+    $URL = $('body').data('url');
+    
+    // Facebook Shares Count
+    $.getJSON( 'http://graph.facebook.com/?id=' + $URL, function( fbdata ) {
+        $('.color-facebook').text(ReplaceNumberWithCommas(fbdata.shares));
+    });
+    
+    // Twitter Shares Count
+    $.getJSON( 'http://cdn.api.twitter.com/1/urls/count.json?url=' + $URL + '&callback=?', function( twitdata ) {
+        $('.color-twitter span').text(ReplaceNumberWithCommas(twitdata.count));
+    });
+
+});
+
+
+// Format Number functions
+function ReplaceNumberWithCommas(yourNumber) {
+    //Seperates the components of the number
+    var components = yourNumber.toString().split(".");
+    //Comma-fies the first part
+    components [0] = components [0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //Combines the two sections
+    return components.join(".");
+}
+
+
 
 
 	

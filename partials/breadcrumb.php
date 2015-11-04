@@ -4,6 +4,7 @@
       <li><a href="<?= site_url() ?>/gender/<?= $_COOKIE['gender']; ?>">Les recettes</a></li>
       <?php 
         $cat = wp_get_post_terms($post->ID, 'gender-cat');
+
         if ($cat) :
       ?>
       <li><a href="<?= site_url(); ?>/gender/<?= $cat[0]->name ?>"><?= $cat[0]->name; ?></a></li>

@@ -39,57 +39,10 @@
         if( $posts ): 
         foreach( $posts as $post):
         ?>
-
           <?php setup_postdata($post); ?>
           <div class="product-thumb col-md-3">
             <?php the_post_thumbnail( 'coat_size', array('class'=>'product-thumb-photo') ); ?>
-            <a href="<?= the_permalink() ?>" class="product-thumb-title" target="_blank"><?php the_title(); ?></a>
-            <a href="<?= the_permalink() ?>" >Fiche article</a>
-            <a href="<?= get_field('url_du_magasin_en_ligne') ?>" target="_blank">Voir sur <?= get_field('nom_du_magasin_en_ligne') ?></a>
-          </div>
-          <?php endforeach; ?>
-          <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-        <?php endif; ?>
-       <?php 
-        $posts = get_field('deuxieme');
-        if( $posts ): 
-        foreach( $posts as $post):
-        ?>
-
-          <?php setup_postdata($post); ?>
-          <div class="product-thumb col-md-3">
-            <?php the_post_thumbnail( 'coat_size', array('class'=>'product-thumb-photo') ); ?>
-            <a href="<?= the_permalink() ?>" class="product-thumb-title" target="_blank"><?php the_title(); ?></a>
-            <a href="<?= the_permalink() ?>" >Fiche article</a>
-            <a href="<?= get_field('url_du_magasin_en_ligne') ?>" target="_blank">Voir sur <?= get_field('nom_du_magasin_en_ligne') ?></a>
-          </div>
-          <?php endforeach; ?>
-          <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-        <?php endif; ?>
-        <?php 
-        $posts = get_field('troisieme');
-        if( $posts ): 
-        foreach( $posts as $post):
-        ?>
-          <?php setup_postdata($post); ?>
-          <div class="product-thumb col-md-3">
-            <?php the_post_thumbnail( 'coat_size', array('class'=>'product-thumb-photo') ); ?>
-            <a href="<?= the_permalink() ?>" class="product-thumb-title" target="_blank"><?php the_title(); ?></a>
-            <a href="<?= the_permalink() ?>" >Fiche article</a>
-            <a href="<?= get_field('url_du_magasin_en_ligne') ?>" target="_blank">Voir sur <?= get_field('nom_du_magasin_en_ligne') ?></a>
-          </div>
-          <?php endforeach; ?>
-          <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-        <?php endif; ?>
-        <?php 
-        $posts = get_field('quatrieme');
-        if( $posts ): 
-        foreach( $posts as $post):
-        ?>
-          <?php setup_postdata($post); ?>
-          <div class="product-thumb col-md-3">
-            <?php the_post_thumbnail( 'coat_size', array('class'=>'product-thumb-photo') ); ?>
-            <a href="<?= the_permalink() ?>" class="product-thumb-title" target="_blank"><?php the_title(); ?></a>
+            <a href="<?= the_permalink() ?>" class="product-thumb-title"><?php the_title(); ?></a>
             <a href="<?= the_permalink() ?>" >Fiche article</a>
             <a href="<?= get_field('url_du_magasin_en_ligne') ?>" target="_blank">Voir sur <?= get_field('nom_du_magasin_en_ligne') ?></a>
           </div>

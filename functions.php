@@ -6,6 +6,7 @@ add_image_size( 'front_image', 468, 9999 );
 add_image_size( 'coat_size', 250, 350, true );
 add_image_size( 'week_size', 1140, 538, true );
 add_image_size( 'look_size', 435, 800, true );
+add_image_size( 'coat_recipe', 338, 620, true );
 
 include_once('vendors/acf/acf.php');
 
@@ -23,7 +24,7 @@ function my_acf_settings_dir( $dir ) {
     return $dir;
 }
 
-include_once('vendors/search-everything/search-everything.php');
+// include_once('vendors/search-everything/search-everything.php');
 
 // Vetements
 include_once('core/coat.php');

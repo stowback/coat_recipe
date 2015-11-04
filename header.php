@@ -1,3 +1,8 @@
+<?php
+  $cat = get_the_terms( $post->ID, 'gender-cat' );
+  $c = strtolower($cat[0]->name);
+  setcookie("gender",$c, time()+ 3600 *24, COOKIEPATH, COOKIE_DOMAIN, false);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -26,7 +31,7 @@
     $classBody = 'page-intro';
   }
 ?>
-<body class="<?= $classBody ?> container">
+<body class="<?= $classBody ?> container" data-url="<?= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>">
 
   <!-- HEADER -->
   <?php if ($classBody != 'page-intro'): ?>
@@ -38,17 +43,12 @@
     <a href="<?= get_site_url() ?>" class="header-logo">
       <img src="<?= get_template_directory_uri() ?>/assets/medias/images/logo.png" alt="">
     </a>
-
     <!-- SWITCH -->
-    <?php
-      $cat = get_the_terms( $post->ID, 'gender-cat' );
-      $c = $cat[0]->name;
-    ?>
     <div class="header-gender-switch switch <?= ($c == "homme") ? "active-left" : "active-right" ?>">
       <a href="<?= get_site_url(); ?>/gender/homme" class="switch-label switch-label-left" data-value="homme">Homme</a>
       <span class="switch-input"></span>
       <a href="<?= get_site_url(); ?>/gender/femme" class="switch-label switch-label-right" data-value="femme">Femme</a>
-      <input value="homme" type="hidden" class="switch-value"/>
+      <input value="<?= $c ?>" type="hidden" class="switch-value"/>
     </div>
 
     <!-- NAVIGATION -->

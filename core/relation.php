@@ -8,7 +8,7 @@ acf_add_local_field_group(array (
   'fields' => array (
     array (
       'key' => 'field_562632d35a51c',
-      'label' => 'premier',
+      'label' => 'Vétements liés',
       'name' => 'premier',
       'type' => 'relationship',
       'instructions' => '',
@@ -33,91 +33,7 @@ acf_add_local_field_group(array (
       'min' => '',
       'max' => '',
       'return_format' => 'object',
-    ),
-    array (
-      'key' => 'field_5631d986b74bd',
-      'label' => 'deuxieme',
-      'name' => 'deuxieme',
-      'type' => 'relationship',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'post_type' => array (
-        0 => 'coat',
-      ),
-      'taxonomy' => array (
-      ),
-      'filters' => array (
-        0 => 'search',
-        1 => 'post_type',
-        2 => 'taxonomy',
-      ),
-      'elements' => '',
-      'min' => '',
-      'max' => '',
-      'return_format' => 'object',
-    ),
-    array (
-      'key' => 'field_5631d9a8b74be',
-      'label' => 'troisieme',
-      'name' => 'troisieme',
-      'type' => 'relationship',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'post_type' => array (
-        0 => 'coat',
-      ),
-      'taxonomy' => array (
-      ),
-      'filters' => array (
-        0 => 'search',
-        1 => 'post_type',
-        2 => 'taxonomy',
-      ),
-      'elements' => '',
-      'min' => '',
-      'max' => '',
-      'return_format' => 'object',
-    ),
-    array (
-      'key' => 'field_5631d9e3b74bf',
-      'label' => 'quatrieme',
-      'name' => 'quatrieme',
-      'type' => 'relationship',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'post_type' => array (
-        0 => 'coat',
-      ),
-      'taxonomy' => array (
-      ),
-      'filters' => array (
-        0 => 'search',
-        1 => 'post_type',
-        2 => 'taxonomy',
-      ),
-      'elements' => '',
-      'min' => '',
-      'max' => '',
-      'return_format' => 'object',
-    ),
+    )
   ),
   'location' => array (
     array (
@@ -142,7 +58,7 @@ acf_add_local_field_group(array (
 
 acf_add_local_field_group(array (
   'key' => 'group_562e2b7c6a811',
-  'title' => 'Second images',
+  'title' => 'Image article de la semaine',
   'fields' => array (
     array (
       'key' => 'field_562e35d491385',

@@ -1,5 +1,9 @@
 <?php get_header() ?>
 
+<?php
+  $cat = get_the_terms( $post->ID, 'gender-cat' );
+  $c = $cat[0]->name;
+?>
 <!-- start main -->
     <!-- WEEK LOOK -->
     <?php
@@ -9,7 +13,7 @@
         'tax_query' => array(
           array(
             'taxonomy' => 'gender-cat',
-            'terms' => $_COOKIE['gender'],
+            'terms' => $c,
             'field'    => 'slug',
             'compare' => '='
           )
@@ -50,13 +54,14 @@
     <!-- GRID -->
     <div class="home-grid">  
     <?php
-
+      $cat = get_the_terms( $post->ID, 'gender-cat' );
+      $c = $cat[0]->name;
       $args = array(
         'post_type'   => 'recette',
         'tax_query' => array(
           array(
             'taxonomy' => 'gender-cat',
-            'terms' => $_COOKIE['gender'],
+            'terms' => $c,
             'field'    => 'slug',
             'compare' => '='
           )
