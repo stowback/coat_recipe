@@ -11,12 +11,10 @@
           <img src="../storage/photo_product_1.jpg" alt="">
           <img src="../storage/photo_product_1.jpg" alt="">
         </div> -->
-        <img class="photos-main" title="image title" alt="thumb image"
         <?php
           $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'look_size' );
         ?>
-             src="<?= $img[0] ?>">
-
+        <img class="photos-main" width="" title="image title" alt="thumb image" src="<?= $img[0] ?>">
       </div>
       <div class="product-infos-content">
         <h1 class="content-title"><?= the_title() ?></h1>
