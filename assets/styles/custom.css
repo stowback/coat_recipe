@@ -1,0 +1,22 @@
+.product-thumb a{
+  display: inline-block;
+}
+.product-thumb a:hover{
+  text-decoration: underline;
+}
+
+.product-thumb .product-thumb-title{
+  display: block; 
+}
+
+.product-thumb .product-thumb-title:hover{
+  text-decoration: none;
+}
+
+.dropdown-items li:hover{
+  background-color: #FAFAFA;
+}
+
+.dropdown-items li:hover i {
+  background-color: rgba(null, null, null, 1);
+}

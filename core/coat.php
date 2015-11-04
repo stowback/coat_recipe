@@ -9,7 +9,7 @@
 // Init
 add_action( 'init', 'create_coat' );
 add_action( 'init', 'create_type_coat' );
-add_action( 'init', 'create_term_type_coat' );
+// add_action( 'init', 'create_term_type_coat' );
 
 // Coat
 function create_coat() {
@@ -23,6 +23,7 @@ function create_coat() {
       'has_archive' => true,
       'taxonomies' => array( 'type' ),
       'rewrite' => array('slug' => 'coats'),
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail' )
     )
   );
 }

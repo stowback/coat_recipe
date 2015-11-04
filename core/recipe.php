@@ -9,8 +9,9 @@
 add_action( 'init', 'create_recette' );
 add_action( 'init', 'create_tags_recette' );
 add_action( 'init', 'create_color_recette' );
-add_action( 'init', 'create_the_tags_recette' );
-add_action( 'init', 'create_the_colors_recette' );
+add_action( 'init', 'create_gender_recette' );
+// add_action( 'init', 'create_the_tags_recette' );
+// add_action( 'init', 'create_the_colors_recette' );
 
 // Create recette
 function create_recette() {
@@ -23,7 +24,8 @@ function create_recette() {
       'public' => true,
       'has_archive' => true,
       'taxonomies' => array('theme', 'color'),
-      'rewrite' => array('slug' => 'recettes'),
+      'rewrite' => array('slug' => 'recette'),
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail' )
     )
   );
 }
@@ -34,8 +36,7 @@ function create_tags_recette() {
     'recette',
     array(
       'label' => __( 'Theme' ),
-      'rewrite' => array( 'slug' => 'theme' ),
-      'hierarchical' => false,
+      'rewrite' => array( 'slug' => 'theme' )
     )
   );
 }
@@ -46,8 +47,18 @@ function create_color_recette() {
     'recette',
     array(
       'label' => __( 'Color' ),
-      'rewrite' => array( 'slug' => 'color' ),
-      'hierarchical' => false,
+      'rewrite' => array( 'slug' => 'color' )
+    )
+  );
+}
+
+function create_gender_recette() {
+  register_taxonomy(
+    'gender-cat',
+    array('recette', 'coat'),
+    array(
+      'label' => __( 'Gender' ),
+      'rewrite' => array( 'slug' => 'gender' )
     )
   );
 }
