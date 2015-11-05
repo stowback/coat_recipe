@@ -1,7 +1,12 @@
 <?php
-  $cat = get_the_terms( $post->ID, 'gender-cat' );
-  $c = strtolower($cat[0]->name);
-  setcookie("gender",$c, time()+ 3600 *24, COOKIEPATH, COOKIE_DOMAIN, false);
+  $gender = get_the_terms( $post->ID, 'gender-cat' );
+  $gen = strtolower($gender[0]->name);
+
+  if ($gen) {
+    setcookie("gender",$gen, time()+ 3600 *24, COOKIEPATH, COOKIE_DOMAIN, false);
+  } else {
+    $gen = $_COOKIE['gender'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -43,12 +48,19 @@
     <a href="<?= get_site_url() ?>" class="header-logo">
       <img src="<?= get_template_directory_uri() ?>/assets/medias/images/logo.png" alt="">
     </a>
+  
+    <div class="search">
+      <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Recherche"/>
+      </form>
+    </div>
+
     <!-- SWITCH -->
-    <div class="header-gender-switch switch <?= ($c == "homme") ? "active-left" : "active-right" ?>">
+    <div class="header-gender-switch switch <?= ($gen == "homme") ? "active-left" : "active-right" ?>">
       <a href="<?= get_site_url(); ?>/gender/homme" class="switch-label switch-label-left" data-value="homme">Homme</a>
       <span class="switch-input"></span>
       <a href="<?= get_site_url(); ?>/gender/femme" class="switch-label switch-label-right" data-value="femme">Femme</a>
-      <input value="<?= $c ?>" type="hidden" class="switch-value"/>
+      <input value="<?= $gen ?>" type="hidden" class="switch-value"/>
     </div>
 
     <!-- NAVIGATION -->

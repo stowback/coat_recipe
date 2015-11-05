@@ -28,10 +28,55 @@
   text-decoration: underline;
 }
 
+.look-content-text{
+  font-family: "Marion", "Serif";
+  line-height: 1.4em;
+}
+
 .look-content-title, .look-content-subtitle, .look-content-actions{
   text-align:center;
 }
 
 .header-gender-switch a{
   text-decoration: none;
+}
+
+h2.add-front-recipe{
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.wpcf7 input, textarea{
+  border: 2px solid #000;
+  width: 100%; height: 50px;
+  padding: 0px 15px;
+  margin-top: 10px;
+}
+
+
+.wpcf7 textarea{
+  padding-top: 10px;
+}
+
+
+.wpcf7 input[type="submit"]{
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wpcf7 input[type="submit"]:hover{
+  background-color: #000;
+  color:#fff;
+  transition: all 0.4s;
+}
+
+.wpcf7 p{
+  margin-top: 30px;
+}
+
+.search input{
+  border-bottom: 2px solid #000;
+  height: 45px;
+  padding-left: 15px;
 }

@@ -12,9 +12,9 @@
       <h1 class="look-content-title"><?= the_title();?></h1>
       <h2 class="look-content-subtitle">Recette #<?= the_id(); ?></h2>
       <div class="look-content-actions">
-        <a href="#" class="color-twitter"><i class="fa fa-twitter"></i><span>28</span></a>
-        <a href="#" class="color-like"><i class="fa fa-heart"></i><span>12</span></a>
-        <a href="#" class="color-facebook"><i class="fa fa-facebook"></i><span>5</span></a>
+        <a onclick="twitterShare()" class="color-twitter"><i class="fa fa-twitter"></i><span>-</span></a>
+        <!-- <a href="#" class="color-like"><i class="fa fa-heart"></i><span>-</span></a> -->
+        <a href="javascript:fbShare('<?= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>', '<?= the_title() ?>', 'Trouver vos ensembles', 'http://goo.gl/dS52U', 520, 350)" class="color-facebook"><i class="fa fa-facebook"></i><span>-</span></a>
       </div>
       <div class="look-content-text"><?= $post->post_content; ?></div>
       <div class="look-content-tags">

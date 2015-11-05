@@ -193,13 +193,11 @@ $('.dropdown-items li').hover( function (e) {
 	*
 	*/
 
-$('#getJSON').click( function () {
-    $('#data-tab').fadeOut();
     $URL = $('body').data('url');
     
     // Facebook Shares Count
     $.getJSON( 'http://graph.facebook.com/?id=' + $URL, function( fbdata ) {
-        $('.color-facebook').text(ReplaceNumberWithCommas(fbdata.shares));
+        $('.color-facebook span').text(ReplaceNumberWithCommas(fbdata.shares));
     });
     
     // Twitter Shares Count
@@ -207,7 +205,6 @@ $('#getJSON').click( function () {
         $('.color-twitter span').text(ReplaceNumberWithCommas(twitdata.count));
     });
 
-});
 
 
 // Format Number functions
@@ -220,7 +217,18 @@ function ReplaceNumberWithCommas(yourNumber) {
     return components.join(".");
 }
 
+function twitterShare (e) {
 
+  var that = this;
 
+  var twitterWindow = window.open('https://twitter.com/intent/tweet?url=' + window.location.href + '&text=Je viens de trouver des habits sur Urban & Stylish ', 'twitter-popup', 'height=350,width=600');
 
-	
+  if(twitterWindow.focus) { twitterWindow.focus(); }
+    return false;
+};
+
+function fbShare(url, title, descr, image, winWidth, winHeight) {
+	var winTop = (screen.height / 2) - (winHeight / 2);
+	var winLeft = (screen.width / 2) - (winWidth / 2);
+	window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+}

@@ -24,7 +24,7 @@ function my_acf_settings_dir( $dir ) {
     return $dir;
 }
 
-// include_once('vendors/search-everything/search-everything.php');
+include_once('vendors/search-everything/search-everything.php');
 
 // Vetements
 include_once('core/coat.php');

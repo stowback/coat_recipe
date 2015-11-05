@@ -62,8 +62,7 @@
           array(
             'taxonomy' => 'gender-cat',
             'terms' => $c,
-            'field'    => 'slug',
-            'compare' => '='
+            'field'    => 'slug'
           )
         )
       );
